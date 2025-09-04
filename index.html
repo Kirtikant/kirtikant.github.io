@@ -1,64 +1,125 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kirtikant | Mobile App Developer</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class' }
+  </script>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans">
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 font-sans transition-colors duration-300">
 
   <!-- Header -->
-  <header class="bg-gray-900 text-white py-12 text-center">
+  <header class="bg-gray-900 dark:bg-gray-800 text-white py-12 text-center relative">
+    <!-- Dark mode toggle -->
+    <button id="theme-toggle" class="absolute top-5 right-5 bg-gray-700 dark:bg-gray-200 text-white dark:text-gray-900 px-3 py-1 rounded-lg shadow">
+      🌙
+    </button>
+
+    <!-- Profile Picture -->
+    <img src="profile.jpg" alt="Profile Picture" class="w-32 h-32 rounded-full border-4 border-white mx-auto mb-4 shadow-lg">
+
     <h1 class="text-4xl md:text-5xl font-bold">👋 Hi, I'm Kirtikant</h1>
     <p class="mt-3 text-lg md:text-xl text-gray-300">
-      Mobile App Developer | Flutter & Android Expert
+      Mobile App Developer | Flutter & Android Specialist
     </p>
+
+    <!-- Resume + Hire Me -->
+    <div class="mt-6 flex justify-center gap-4">
+      <a href="resume.pdf" download class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg shadow">
+        📄 Download Resume
+      </a>
+      <a href="https://www.upwork.com/freelancers/your-profile" target="_blank"
+         class="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-lg shadow">
+        💼 Hire Me on Upwork
+      </a>
+    </div>
   </header>
 
-  <!-- About Section -->
+  <!-- About -->
   <section class="max-w-4xl mx-auto px-6 py-16 text-center">
     <h2 class="text-3xl font-semibold mb-6">About Me</h2>
-    <p class="text-lg leading-relaxed text-gray-600">
-      I build modern mobile applications with <span class="font-semibold">Flutter, Android (Kotlin/Java), Supabase & Firebase</span>. 
-      Passionate about creating <span class="italic">user-friendly, scalable, and beautiful apps</span>.
+    <p class="text-lg leading-relaxed text-gray-600 dark:text-gray-300">
+      I am a passionate <strong>Mobile App Developer</strong> with expertise in 
+      <span class="font-semibold">Flutter, Android (Kotlin/Java), Supabase, Firebase</span>.  
+      I specialize in building scalable apps with clean architecture (MVVM, Riverpod) and 
+      seamless user experiences.
     </p>
   </section>
 
+  <!-- Skills -->
+  <section class="bg-white dark:bg-gray-800 py-16">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-semibold mb-10">Skills</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="p-4 bg-gray-100 dark:bg-gray-700 rounded-lg shadow">Flutter</div>
+        <div class="p-4 bg-gray-100 dark:bg-gray-700 rounded-lg shadow">Android (Kotlin/Java)</div>
+        <div class="p-4 bg-gray-100 dark:bg-gray-700 rounded-lg shadow">Supabase & Firebase</div>
+        <div class="p-4 bg-gray-100 dark:bg-gray-700 rounded-lg shadow">REST APIs & Retrofit</div>
+        <div class="p-4 bg-gray-100 dark:bg-gray-700 rounded-lg shadow">MVVM Architecture</div>
+        <div class="p-4 bg-gray-100 dark:bg-gray-700 rounded-lg shadow">Riverpod / Provider</div>
+        <div class="p-4 bg-gray-100 dark:bg-gray-700 rounded-lg shadow">GitHub & CI/CD</div>
+        <div class="p-4 bg-gray-100 dark:bg-gray-700 rounded-lg shadow">Responsive UI (Web & Mobile)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="max-w-6xl mx-auto px-6 py-16 text-center">
+    <h2 class="text-3xl font-semibold mb-10">Services</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="bg-gray-100 dark:bg-gray-700 rounded-2xl shadow p-6">
+        <h3 class="text-xl font-bold mb-2">📱 Mobile App Development</h3>
+        <p class="text-gray-600 dark:text-gray-300">
+          Full-cycle development for Android & cross-platform apps with Flutter.
+        </p>
+      </div>
+      <div class="bg-gray-100 dark:bg-gray-700 rounded-2xl shadow p-6">
+        <h3 class="text-xl font-bold mb-2">🔧 Bug Fixes & Optimization</h3>
+        <p class="text-gray-600 dark:text-gray-300">
+          Fix crashes, optimize performance, and improve app UI/UX.
+        </p>
+      </div>
+      <div class="bg-gray-100 dark:bg-gray-700 rounded-2xl shadow p-6">
+        <h3 class="text-xl font-bold mb-2">⚡ API & Backend Integration</h3>
+        <p class="text-gray-600 dark:text-gray-300">
+          Connect apps to Supabase, Firebase, REST APIs, and third-party services.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <!-- Projects -->
-  <section class="bg-white py-16">
+  <section class="bg-white dark:bg-gray-800 py-16 transition-colors">
     <div class="max-w-6xl mx-auto px-6">
       <h2 class="text-3xl font-semibold text-center mb-10">Projects</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        
-        <!-- Project Card -->
-        <div class="bg-gray-100 rounded-2xl shadow hover:shadow-lg transition p-6">
+        <div class="bg-gray-100 dark:bg-gray-700 rounded-2xl shadow hover:shadow-lg transition p-6">
           <h3 class="text-xl font-bold mb-2">🍔 Food Delivery App</h3>
-          <p class="text-gray-600 mb-4">Flutter + Supabase | MVVM Architecture</p>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">Flutter + Supabase | MVVM Architecture</p>
           <a href="https://github.com/your-username/food-delivery-app" 
-             class="text-blue-600 hover:underline font-medium" target="_blank">
+             class="text-blue-600 dark:text-blue-400 hover:underline font-medium" target="_blank">
              🔗 View on GitHub
           </a>
         </div>
-
-        <div class="bg-gray-100 rounded-2xl shadow hover:shadow-lg transition p-6">
+        <div class="bg-gray-100 dark:bg-gray-700 rounded-2xl shadow hover:shadow-lg transition p-6">
           <h3 class="text-xl font-bold mb-2">📍 Location Tracker</h3>
-          <p class="text-gray-600 mb-4">Google Maps + Flutter</p>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">Google Maps + Flutter</p>
           <a href="https://github.com/your-username/location-tracker" 
-             class="text-blue-600 hover:underline font-medium" target="_blank">
+             class="text-blue-600 dark:text-blue-400 hover:underline font-medium" target="_blank">
              🔗 View on GitHub
           </a>
         </div>
-
-        <div class="bg-gray-100 rounded-2xl shadow hover:shadow-lg transition p-6">
+        <div class="bg-gray-100 dark:bg-gray-700 rounded-2xl shadow hover:shadow-lg transition p-6">
           <h3 class="text-xl font-bold mb-2">🔑 Social Login App</h3>
-          <p class="text-gray-600 mb-4">Google, Facebook, Apple Auth</p>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">Google, Facebook, Apple Auth</p>
           <a href="https://github.com/your-username/social-login-app" 
-             class="text-blue-600 hover:underline font-medium" target="_blank">
+             class="text-blue-600 dark:text-blue-400 hover:underline font-medium" target="_blank">
              🔗 View on GitHub
           </a>
         </div>
-
       </div>
     </div>
   </section>
@@ -66,15 +127,39 @@
   <!-- Contact -->
   <section class="max-w-4xl mx-auto px-6 py-16 text-center">
     <h2 class="text-3xl font-semibold mb-6">Contact Me</h2>
-    <p class="mb-2">📧 <a href="mailto:your-email@example.com" class="text-blue-600 hover:underline">your-email@example.com</a></p>
-    <p class="mb-2">🔗 <a href="https://linkedin.com/in/yourprofile" class="text-blue-600 hover:underline" target="_blank">LinkedIn</a></p>
-    <p>💻 <a href="https://github.com/your-username" class="text-blue-600 hover:underline" target="_blank">GitHub</a></p>
+    <p class="mb-2">📧 <a href="mailto:your-email@example.com" class="text-blue-600 dark:text-blue-400 hover:underline">your-email@example.com</a></p>
+    <p class="mb-2">🔗 <a href="https://linkedin.com/in/yourprofile" class="text-blue-600 dark:text-blue-400 hover:underline" target="_blank">LinkedIn</a></p>
+    <p class="mb-2">🌍 <a href="https://www.upwork.com/freelancers/your-profile" class="text-blue-600 dark:text-blue-400 hover:underline" target="_blank">Upwork</a></p>
+    <p>💻 <a href="https://github.com/your-username" class="text-blue-600 dark:text-blue-400 hover:underline" target="_blank">GitHub</a></p>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-gray-900 text-gray-400 text-center py-6">
+  <footer class="bg-gray-900 dark:bg-gray-950 text-gray-400 text-center py-6">
     <p>© 2025 Kirtikant | All Rights Reserved</p>
   </footer>
+
+  <!-- Dark Mode Toggle Script -->
+  <script>
+    const toggleBtn = document.getElementById('theme-toggle');
+    const htmlEl = document.documentElement;
+
+    if (localStorage.getItem('theme') === 'light') {
+      htmlEl.classList.remove('dark');
+      toggleBtn.textContent = '🌞';
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      if (htmlEl.classList.contains('dark')) {
+        htmlEl.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+        toggleBtn.textContent = '🌞';
+      } else {
+        htmlEl.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+        toggleBtn.textContent = '🌙';
+      }
+    });
+  </script>
 
 </body>
 </html>
