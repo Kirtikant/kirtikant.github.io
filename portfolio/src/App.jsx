@@ -21,7 +21,7 @@ export default function App() {
         <Contact />
       </main>
       <footer className="text-center py-6 text-gray-500 text-sm">
-        © 2026 Kirtikant Patadiya • Built with React + Tailwind + Framer Motion
+        © 2025 Kirtikant Patadiya • Built with React + Tailwind + Framer Motion
       </footer>
     </div>
   )
