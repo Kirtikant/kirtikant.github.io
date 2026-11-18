@@ -1,5 +1,5 @@
 
-name: Deploy Portfolio to GitHub Pages
+name: Deploy React Portfolio to GitHub Pages
 
 on:
   push:
@@ -17,11 +17,8 @@ concurrency:
 
 jobs:
   build:
-    name: Build React Portfolio
+    name: Build React and Vite
     runs-on: ubuntu-latest
-
-    permissions:
-      contents: read
 
     defaults:
       run:
@@ -41,23 +38,23 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build Vite application
+      - name: Build production website
         run: npm run build
 
-      - name: Verify production output
+      - name: Verify build output
         run: |
           test -f dist/index.html
-          echo "Portfolio build completed successfully."
+          echo "Vite build successful"
 
-      - name: Upload GitHub Pages artifact
+      - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: portfolio/dist
 
   deploy:
-    name: Publish GitHub Pages
-    runs-on: ubuntu-latest
+    name: Deploy website
     needs: build
+    runs-on: ubuntu-latest
 
     permissions:
       pages: write
