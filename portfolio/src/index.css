@@ -1,6 +1,8 @@
+@import "tailwindcss";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 
 /* Base styles for global dark/light text handling */
 @layer base {

@@ -5,12 +5,11 @@ on:
   push:
     branches:
       - kirtikant-portfolio
+
   workflow_dispatch:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
   group: github-pages
@@ -18,7 +17,11 @@ concurrency:
 
 jobs:
   build:
+    name: Build React Portfolio
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
 
     defaults:
       run:
@@ -38,17 +41,27 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build portfolio
+      - name: Build Vite application
         run: npm run build
 
-      - name: Upload Pages artifact
+      - name: Verify production output
+        run: |
+          test -f dist/index.html
+          echo "Portfolio build completed successfully."
+
+      - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: portfolio/dist
 
   deploy:
-    needs: build
+    name: Publish GitHub Pages
     runs-on: ubuntu-latest
+    needs: build
+
+    permissions:
+      pages: write
+      id-token: write
 
     environment:
       name: github-pages
@@ -58,4 +71,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
